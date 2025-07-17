@@ -53,7 +53,7 @@ jobs:
           npm install -g appium@latest
           npm install -g appium-uiautomator2-driver@latest
           nohup appium --base-path /wd/hub > /dev/null 2>&1 &
-          sleep 10
+          sleep 20
           # Run Robot Framework tests
           mkdir -p $GITHUB_WORKSPACE/results
           robot --outputdir $GITHUB_WORKSPACE/results --timestampoutputs $GITHUB_WORKSPACE/TEST/test.robot

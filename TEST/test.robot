@@ -5,7 +5,7 @@ Library                                        AppiumLibrary
 
 
 *** Variables ***
-${REMOTE_URL}          http://localhost:4723
+${REMOTE_URL}          http://localhost:4723/wd/hub
 ${PLATFORM_NAME}       Android
 ${DEVICE_NAME}         emulator-5554
 ${AUTOMATION_NAME}     UiAutomator2
