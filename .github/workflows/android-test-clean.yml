@@ -51,7 +51,7 @@ jobs:
           sed -i "s/emulator-5554/$DEVICE_NAME/g" $GITHUB_WORKSPACE/TEST/test.robot
           # Start Appium
           npm install -g appium@latest
-          npm install -g appium-uiautomator2-driver@latest
+          appium driver install uiautomator2
           nohup appium --base-path /wd/hub > /dev/null 2>&1 &
           sleep 20
           # Run Robot Framework tests
