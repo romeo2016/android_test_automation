@@ -50,13 +50,13 @@ jobs:
           echo "DEVICE_NAME=$DEVICE_NAME" >> $GITHUB_ENV
           sed -i "s/emulator-5554/$DEVICE_NAME/g" $GITHUB_WORKSPACE/TEST/test.robot
           # Start Appium
-          npm install -g appium@2.0.0
-          npm install -g appium-uiautomator2-driver
+          npm install -g appium@latest
+          npm install -g appium-uiautomator2-driver@latest
           nohup appium --base-path /wd/hub > /dev/null 2>&1 &
           sleep 10
           # Run Robot Framework tests
-          cd $GITHUB_WORKSPACE/TEST
-          robot --outputdir ../results --timestampoutputs test.robot
+          mkdir -p $GITHUB_WORKSPACE/results
+          robot --outputdir $GITHUB_WORKSPACE/results --timestampoutputs $GITHUB_WORKSPACE/TEST/test.robot
 
     - name: Upload test results
       if: always()
