@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.9.6 on darwin)" generated="2025-07-17T08:58:08.593860" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/RomeoBajada/Documents/github/android_test_playground/TEST/test.robot">
+<test id="s1-t1" name="Verify &quot;Gumawa ng account&quot; Button is Visible" line="29">
+<kw name="Open the AppendPay app on Android">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-07-17T08:58:08.697595" elapsed="5.058500"/>
+</kw>
+<status status="PASS" start="2025-07-17T08:58:08.697208" elapsed="5.059448"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-07-17T08:58:18.410513" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
+xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]</msg>
+<arg>//android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-07-17T08:58:13.756930" elapsed="4.653676"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T08:58:23.412594" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T08:58:18.410788" elapsed="5.002025"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-07-17T08:58:23.413217" elapsed="0.352767"/>
+</kw>
+<status status="PASS" start="2025-07-17T08:58:08.696869" elapsed="15.069278"/>
+</test>
+<status status="PASS" start="2025-07-17T08:58:08.594518" elapsed="15.171923"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
