@@ -15,18 +15,17 @@ ${APP_ACTIVITY}        com.multisyscorp.superapp.ui.splash.SplashActivity
 
 
 # *** Keywords ***
-# Open the AppendPay app on Android
-               
-
-
-*** Test Cases ***
-Verify "Gumawa ng account" Button is Visible
+Open the AppendPay app on Android
     Open Application    ${REMOTE_URL}    
     ...                 platformName=${PLATFORM_NAME}
     ...                 deviceName=${DEVICE_NAME}
     ...                 automationName=${AUTOMATION_NAME} 
     ...                 appPackage=${APP_PACKAGE}
-    ...                 appActivity=${APP_ACTIVITY}    
+    ...                 appActivity=${APP_ACTIVITY}              
+
+
+*** Test Cases ***
+Verify "Gumawa ng account" Button is Visible
     Open the AppendPay app on Android
     Wait Until Element Is Visible            //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
     Sleep                                    5s
