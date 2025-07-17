@@ -5,7 +5,7 @@ Library                                        AppiumLibrary
 
 
 *** Variables ***
-${REMOTE_URL}          http://localhost:4723/wd/hub
+# ${REMOTE_URL}          http://localhost:4723/wd/hub
 ${PLATFORM_NAME}       Android
 ${DEVICE_NAME}         emulator-5554
 ${AUTOMATION_NAME}     UiAutomator2
@@ -14,9 +14,9 @@ ${APP_PACKAGE}         com.multisys.append.develop
 ${APP_ACTIVITY}        com.multisyscorp.superapp.ui.splash.SplashActivity
 
 
-# *** Keywords ***
+*** Keywords ***
 Open the AppendPay app on Android
-    Open Application    ${REMOTE_URL}    
+    Open Application    http://localhost:4723/wd/hub   
     ...                 platformName=${PLATFORM_NAME}
     ...                 deviceName=${DEVICE_NAME}
     ...                 automationName=${AUTOMATION_NAME} 
