@@ -44,7 +44,7 @@ jobs:
         boot-timeout-minutes: 10
         script: |
           adb wait-for-device
-          bash -c "LAUNCHER_READY=\"\"; while [ \"\$LAUNCHER_READY\" = \"\" ]; do LAUNCHER_READY=\$(adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' | grep Launcher); echo 'Waiting for launcher to be ready...'; sleep 5; done"
+          bash -c "MAX_ATTEMPTS=60; ATTEMPT=0; LAUNCHER_READY=\"\"; while [ \"\$LAUNCHER_READY\" = \"\" ] && [ \$ATTEMPT -lt \$MAX_ATTEMPTS ]; do LAUNCHER_READY=\$(adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' | grep Launcher); echo 'Waiting for launcher to be ready...'; sleep 5; ATTEMPT=\$((ATTEMPT+1)); done; if [ \"\$LAUNCHER_READY\" = \"\" ]; then echo 'ERROR: Launcher did not become ready in time.'; exit 1; fi"
           ls -lh $GITHUB_WORKSPACE/non_mfi_build.apk
           file $GITHUB_WORKSPACE/non_mfi_build.apk
           for i in {1..3}; do
