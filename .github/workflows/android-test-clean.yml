@@ -53,6 +53,7 @@ jobs:
           # Optionally, get the emulator device name for your test
           export DEVICE_NAME=$(adb devices | grep emulator | head -1 | cut -f1)
           echo "DEVICE_NAME=$DEVICE_NAME" >> $GITHUB_ENV
+          echo "Using emulator device: $DEVICE_NAME"
           sed -i "s/emulator-5554/$DEVICE_NAME/g" $GITHUB_WORKSPACE/TEST/test.robot
           # Start Appium
           npm install -g appium@latest
