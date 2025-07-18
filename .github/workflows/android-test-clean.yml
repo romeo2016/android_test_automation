@@ -43,22 +43,18 @@ jobs:
         disable-animations: true
         boot-timeout-minutes: 10
         script: |
-          adb devices
-          # Wait for emulator to be fully booted
           adb wait-for-device
           bash -c "BOOT_COMPLETED=\"\"; while [ \"\$BOOT_COMPLETED\" != \"1\" ]; do BOOT_COMPLETED=\$(adb shell getprop sys.boot_completed | tr -d '\r'); echo 'Waiting for emulator to fully boot...'; sleep 5; done"
-          bash <<'EOF'
-          LAUNCHER_READY=""
-          while [ -z "$LAUNCHER_READY" ]; do
-            LAUNCHER_READY=$(adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' | grep Launcher)
-            echo "Waiting for launcher to be ready..."
-            sleep 5
-          done
-          EOF
-          # Check APK
+          bash -c '
+            LAUNCHER_READY=""
+            while [ -z "$LAUNCHER_READY" ]; do
+              LAUNCHER_READY=$(adb shell dumpsys window windows | grep -E "mCurrentFocus|mFocusedApp" | grep Launcher)
+              echo "Waiting for launcher to be ready..."
+              sleep 5
+            done
+          '
           ls -lh $GITHUB_WORKSPACE/non_mfi_build.apk
           file $GITHUB_WORKSPACE/non_mfi_build.apk
-          # Retry install
           for i in {1..3}; do
             adb install $GITHUB_WORKSPACE/non_mfi_build.apk && break
             echo "APK install failed, retrying in 10s..."
