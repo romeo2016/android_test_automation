@@ -16,7 +16,7 @@ ${APP_ACTIVITY}        com.multisyscorp.superapp.ui.splash.SplashActivity
 
 *** Keywords ***
 Open the AppendPay app on Android
-    Open Application    http://localhost:4723
+    Open Application    http://localhost:4723/wd/hub   
     ...                 platformName=${PLATFORM_NAME}
     ...                 deviceName=${DEVICE_NAME}
     ...                 automationName=${AUTOMATION_NAME} 
