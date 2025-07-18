@@ -22,8 +22,8 @@ Open the AppendPay app on Android
     ...                 automationName=${AUTOMATION_NAME} 
     ...                 appPackage=${APP_PACKAGE}
     ...                 appActivity=${APP_ACTIVITY}    
-    ...                 uiautomator2ServerInstallTimeout=60000     
-    ...                 adbExecTimeout=60000         
+    ...                 uiautomator2ServerInstallTimeout=180000     
+    ...                 adbExecTimeout=120000         
 
 
 *** Test Cases ***
