@@ -35,13 +35,13 @@ jobs:
     - name: Start Android Emulator and Run Tests
       uses: ReactiveCircus/android-emulator-runner@v2
       with:
-        api-level: 29
+        api-level: 28           # Try 27 or 28
         target: google_apis
-        arch: x86_64
-        profile: Nexus 5
-        emulator-options: -no-window -no-audio -gpu swiftshader_indirect -no-snapshot-save -no-boot-anim
+        arch: x86               # Try x86 if possible
+        profile: Nexus 4        # Or Pixel_2, etc.
+        boot-timeout-minutes: 15
+        emulator-options: -no-window -no-audio -no-boot-anim
         disable-animations: true
-        boot-timeout-minutes: 10
         script: |
           adb wait-for-device
           bash -c "MAX_ATTEMPTS=60; ATTEMPT=0; LAUNCHER_READY=\"\"; while [ \"\$LAUNCHER_READY\" = \"\" ] && [ \$ATTEMPT -lt \$MAX_ATTEMPTS ]; do LAUNCHER_READY=\$(adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' | grep Launcher); echo 'Waiting for launcher to be ready...'; sleep 5; ATTEMPT=\$((ATTEMPT+1)); done; if [ \"\$LAUNCHER_READY\" = \"\" ]; then echo 'ERROR: Launcher did not become ready in time.'; exit 1; fi"
