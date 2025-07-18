@@ -46,12 +46,14 @@ jobs:
           adb devices
           # Wait for emulator to be fully booted
           adb wait-for-device
-          BOOT_COMPLETED=""
-          while [ "$BOOT_COMPLETED" != "1" ]; do
-            BOOT_COMPLETED=$(adb shell getprop sys.boot_completed | tr -d '\r')
-            echo "Waiting for emulator to fully boot..."
-            sleep 5
-          done
+          bash -c '
+            BOOT_COMPLETED=""
+            while [ "$BOOT_COMPLETED" != "1" ]; do
+              BOOT_COMPLETED=$(adb shell getprop sys.boot_completed | tr -d "\r")
+              echo "Waiting for emulator to fully boot..."
+              sleep 5
+            done
+          '
           # Check APK exists
           ls -lh $GITHUB_WORKSPACE/non_mfi_build.apk
           adb install $GITHUB_WORKSPACE/non_mfi_build.apk
