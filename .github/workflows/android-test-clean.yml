@@ -47,11 +47,7 @@ jobs:
           bash -c "MAX_ATTEMPTS=60; ATTEMPT=0; LAUNCHER_READY=\"\"; while [ \"\$LAUNCHER_READY\" = \"\" ] && [ \$ATTEMPT -lt \$MAX_ATTEMPTS ]; do LAUNCHER_READY=\$(adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp' | grep Launcher); echo 'Waiting for launcher to be ready...'; sleep 5; ATTEMPT=\$((ATTEMPT+1)); done; if [ \"\$LAUNCHER_READY\" = \"\" ]; then echo 'ERROR: Launcher did not become ready in time.'; exit 1; fi"
           ls -lh $GITHUB_WORKSPACE/non_mfi_build.apk
           file $GITHUB_WORKSPACE/non_mfi_build.apk
-          for i in {1..3}; do
-            adb install $GITHUB_WORKSPACE/non_mfi_build.apk && break
-            echo "APK install failed, retrying in 10s..."
-            sleep 10
-          done
+          bash -c 'for i in {1..3}; do adb install $GITHUB_WORKSPACE/non_mfi_build.apk && break; echo "APK install failed, retrying in 10s..."; sleep 10; done'
           # Optionally, get the emulator device name for your test
           export DEVICE_NAME=$(adb devices | grep emulator | head -1 | cut -f1)
           echo "DEVICE_NAME=$DEVICE_NAME" >> $GITHUB_ENV
