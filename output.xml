@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.9.6 on darwin)" generated="2025-07-17T08:58:08.593860" rpa="false" schemaversion="5">
-<suite id="s1" name="Test" source="/Users/RomeoBajada/Documents/github/android_test_playground/TEST/test.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-07-18T09:56:09.564689" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/romeobajadajr/Documents/GitHub/android_test_automation/TEST/test.robot">
 <test id="s1-t1" name="Verify &quot;Gumawa ng account&quot; Button is Visible" line="29">
 <kw name="Open the AppendPay app on Android">
 <kw name="Open Application" owner="AppiumLibrary">
-<arg>${REMOTE_URL}</arg>
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-07-18T09:56:09.626105" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-07-18T09:56:09.626013" elapsed="0.001074">No application is open</status>
+</kw>
+<msg time="2025-07-18T09:56:09.627409" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-07-18T09:56:09.627480" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</msg>
+<arg>http://localhost:4723/wd/hub</arg>
 <arg>platformName=${PLATFORM_NAME}</arg>
 <arg>deviceName=${DEVICE_NAME}</arg>
 <arg>automationName=${AUTOMATION_NAME}</arg>
 <arg>appPackage=${APP_PACKAGE}</arg>
 <arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>uiautomator2ServerInstallTimeout=60000</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -17,52 +26,42 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2025-07-17T08:58:08.697595" elapsed="5.058500"/>
+<status status="FAIL" start="2025-07-18T09:56:09.620150" elapsed="0.007762">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</status>
 </kw>
-<status status="PASS" start="2025-07-17T08:58:08.697208" elapsed="5.059448"/>
+<status status="FAIL" start="2025-07-18T09:56:09.619898" elapsed="0.008077">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2025-07-17T08:58:18.410513" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]
-xpath criteria: //android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]</msg>
 <arg>//android.widget.Button[@resource-id="com.multisys.append.develop:id/btn_register"]</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2025-07-17T08:58:13.756930" elapsed="4.653676"/>
+<status status="NOT RUN" start="2025-07-18T09:56:09.628040" elapsed="0.000010"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-07-17T08:58:23.412594" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-07-17T08:58:18.410788" elapsed="5.002025"/>
+<status status="NOT RUN" start="2025-07-18T09:56:09.628090" elapsed="0.000007"/>
 </kw>
 <kw name="Close Application" owner="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" start="2025-07-17T08:58:23.413217" elapsed="0.352767"/>
+<status status="NOT RUN" start="2025-07-18T09:56:09.628130" elapsed="0.000007"/>
 </kw>
-<status status="PASS" start="2025-07-17T08:58:08.696869" elapsed="15.069278"/>
+<status status="FAIL" start="2025-07-18T09:56:09.619659" elapsed="0.008539">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+</status>
 </test>
-<status status="PASS" start="2025-07-17T08:58:08.594518" elapsed="15.171923"/>
+<status status="FAIL" start="2025-07-18T09:56:09.565223" elapsed="0.063119"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+<stat name="Test" id="s1" pass="0" fail="1" skip="0">Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-07-18T09:56:09.627409" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
